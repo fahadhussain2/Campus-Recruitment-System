@@ -1,0 +1,32 @@
+<md-card class="example-card">
+  <md-card-header>
+    <md-card-title><h2>Jobs List</h2></md-card-title>
+  </md-card-header>
+  <md-card-content>
+
+    <md-list>
+      <md-progress-spinner mode="indeterminate" *ngIf="!(jobs$ | async)"></md-progress-spinner>
+      <!--<h3 md-subheader>Folders</h3>-->
+      <md-list-item *ngFor="let item of jobs$ | async; let num = index">
+        <!--<md-icon md-list-avatar>folder</md-icon>-->
+        
+        <h4 md-line> Title:{{item['JobTitle']}}</h4>
+        <h4 md-line> Type:{{item['JobType']}}</h4>
+        <h4 md-line> Salary:{{item['JobSalary']}}</h4>
+        <h4 md-line> Description:{{item['JobDescription']}}</h4>
+        
+
+        <span class="example-spacer"></span>
+        
+        <button md-button md-raised-button color="primary"  (click)="deleteCompany(item.$key)" >Delete</button>
+        <!--<md-divider ></md-divider>-->
+      </md-list-item>
+      
+    </md-list>
+<button md-button md-raised-button color="primary"  (click)="navigate()" >Back</button>
+
+  </md-card-content>
+</md-card>
+
+  
+

@@ -1,0 +1,15 @@
+<md-toolbar color="primary">
+  
+  <span class="examplespacer">Campus Recruitment System</span>
+  <button md-button routerLink="login" *ngIf="!flag">Login</button>
+  <button md-button routerLink="signup" *ngIf="!flag">Sign Up</button>
+ 
+  <span *ngIf="fullname" style="text-align: right"> Hello: {{fullname}}</span>
+  <button md-button routerLink="signup" *ngIf="flag"  (click)="logOut()">Logout</button>
+  
+
+</md-toolbar>
+
+
+<router-outlet></router-outlet>
+

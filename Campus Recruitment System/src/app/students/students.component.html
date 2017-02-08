@@ -1,0 +1,33 @@
+<md-card class="example-card">
+  <md-card-header>
+    <md-card-title><h2>Resume List</h2></md-card-title>
+  </md-card-header>
+  <md-card-content>
+
+    <md-list>
+      <!--<h3 md-subheader>Folders</h3>-->
+      <md-progress-spinner mode="indeterminate" *ngIf="!(resumes$ | async)"></md-progress-spinner>
+      <md-list-item *ngFor="let item of resumes$ | async; let num = index">
+        <!--<md-icon md-list-avatar>folder</md-icon>-->
+        
+        <h4 md-line> Education:{{item['education']}}</h4>
+        <h4 md-line> Graduation year:{{item['graduation']}}</h4>
+        <h4 md-line> Skills:{{item['skills']}}</h4>
+        <h4 md-line> Cgpa:{{item['year']}}</h4>
+        <h4 md-line> Experience:{{item['experience']}}</h4>
+        <h4 md-line> Description:{{item['description']}}</h4>
+        
+
+        <span class="example-spacer"></span>
+        <button md-button md-raised-button color="primary" (click)="deleteResume(item.$key)">Delete</button>
+        <!--<button md-button md-raised-button color="danger" *ngIf="canDelete(user, item.uid)" (click)="delete(item.$key)" >Delete</button>-->
+        <!--<md-divider ></md-divider>-->
+      </md-list-item>
+      
+    </md-list>
+<button md-button md-raised-button color="primary" (click)="navigate()">Back</button>
+
+  </md-card-content>
+</md-card>
+  
+

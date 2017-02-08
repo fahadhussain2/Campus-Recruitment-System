@@ -1,0 +1,56 @@
+<md-grid-list cols="3" class="grid-list-height">
+  <md-grid-tile [colspan]="1" [rowspan]="1">
+  </md-grid-tile>
+  <md-grid-tile [colspan]="1" [rowspan]="1" class="grid-tile-height" style="height: 150px">
+    
+    <form class="example-form" [formGroup]="userForm" (ngSubmit)="addResume()">
+
+      <md-card class="example-card card-forms" >
+        <md-card-header>
+          <!--<md-card-title><h2>Resume</h2></md-card-title>-->
+        </md-card-header>
+        <md-card-content >
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Last Education" [formControl]="userForm.controls['education']" > 
+            <md-hint *ngIf="userForm.controls['education'].touched && userForm.controls['education'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Last Education Year" [formControl]="userForm.controls['year']" > 
+            <md-hint *ngIf="userForm.controls['year'].touched && userForm.controls['year'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Last Education Grade" [formControl]="userForm.controls['Cgpa']" > 
+            <md-hint *ngIf="userForm.controls['Cgpa'].touched && userForm.controls['Cgpa'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Professional Experience" [formControl]="userForm.controls['experience']"> 
+            <md-hint *ngIf="userForm.controls['experience'].touched && userForm.controls['experience'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Skills" [formControl]="userForm.controls['skills']"> 
+            <md-hint *ngIf="userForm.controls['skills'].touched && userForm.controls['skills'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+          <md-input-container class="example-full-width">
+            <input md-input placeholder="Personal & Professional Description" [formControl]="userForm.controls['description']"> 
+            <md-hint *ngIf="userForm.controls['description'].touched && userForm.controls['description'].hasError('required')" [ngStyle]="{'color': 'red'}" align="start">Required</md-hint>
+          </md-input-container>
+
+        </md-card-content>
+        <md-card-actions class="text-right padding-right-20 padding-bottom-10">
+          <span class="example-spacer"></span>
+          <button md-button md-raised-button color="primary" type="submit">Post</button>
+        </md-card-actions>
+      </md-card>
+
+    </form>
+<button md-button md-raised-button color="primary"  routerLink="company">View Jobs</button>
+  </md-grid-tile>
+  <md-grid-tile [colspan]="1" [rowspan]="1">    
+  </md-grid-tile>
+</md-grid-list>
